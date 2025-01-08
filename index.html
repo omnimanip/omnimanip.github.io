@@ -168,7 +168,7 @@
     <div class="hero-body">
       <div class="container">
         <div class="columns is-vcentered  is-centered">
-          <video id="teaser" autoplay muted loop controls height="100%" width="100%" controlsList="nodownload">
+          <video id="teaser" autoplay muted loop height="80%" width="80%" controlsList="nodownload">
             <source src="media/videos/teaser.mp4"
                     type="video/mp4">
           </video>
@@ -232,12 +232,12 @@
                     type="video/mp4">
           </video>
         </div>
-        <div class="item">
+        <!-- <div class="item">
           <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
             <source src="media/task-videos/close_drawer_x3.mp4"
                     type="video/mp4">
           </video>
-        </div>
+        </div> -->
         <div class="item">
           <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
             <source src="media/task-videos/hammer_button_x3.mp4"
@@ -269,7 +269,7 @@
 </section>
 <h2 class="subtitle has-text-centered">
 </br>
-  <!-- OmniManip is capable of handling diverse <b>open-vocabulary instructions and objects</b> in a <b>zero-training</b> manner. -->
+  OmniManip is capable of handling diverse <b>open-vocabulary instructions and objects</b> in a <b>zero-training</b> manner.
 </h2>
 
 <!-- Abstract -->
@@ -295,9 +295,7 @@
       </div>
     </div>
     <!--/ Abstract. -->
-
   </div>
-
 </section>
 
 
@@ -321,7 +319,7 @@
         <!-- <br> -->
         </div>
         <!-- <img src="media/videos/method_figure.gif" class="interpolation-image" /> -->
-        <video src="media/videos/method.mp4" class="interpolation-image" loop autoplay muted controlsList="nodownload"></video>
+        <video src="media/videos/method.mp4" class="interpolation-image" loop autoplay muted controls controlsList="nodownload"></video>
         <p class="content has-text-justified">
           Given instructions and RGB-D observations, OmniManip utilizes VLM and VFM to identify task-relevant objects and decompose the task into distinct stages. 
           During each stage, OmniManip extracts <span style="color: orange;">object-centric canonical interaction primitives</span> as spatial constraints and employs the <span style="color: orange;">RRC</span> mechanism for <span style="color: orange;">closed-loop inference</span>.
