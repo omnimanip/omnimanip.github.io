@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="OmniManip: Towards General Robotic Manipulation via Object-Centric Interaction Primitives as Spatial Constraints  (early version)">
+  <meta name="keywords" content="Robotic Manipulation, GPT-4V(ision)">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="rqWXbD70hMlVge3Lhc6VmIiXSzz1A1kLFWOCEGhUMWI" />
+  <title style="letter-spacing: 0.1em; font-variant: small-caps;">OmniManip</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2ZLMKHR2E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R2ZLMKHR2E');
+</script>
+
+  <!-- interaction -->
+  <!-- <script>
+    function updateInteractive() {
+      var task = document.getElementById("interactive-menu").value;
+
+      console.log("interactive", task)
+
+      var video = document.getElementById("interactive-video");
+      video.src = "media/short-videos/" + 
+                  task + 
+                  ".mp4"
+      video.play();
+
+      var html = document.getElementById("interactive-html-1");
+      html.src = "media/interactive/" + 
+                  task + 
+                  ".html"
+
+      // hide the second iframe container
+      var iframeContainer2 = document.getElementById("second-iframe-container");
+      iframeContainer2.style.display = "none";
+    }
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<!-- <body onload="updateInteractive();"> -->
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-fullhd">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">OmniManip: Towards General Robotic Manipulation via Object-Centric Interaction Primitives as Spatial Constraints</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Mingjie Pan<sup>1,2*</sup>,
+            </span>
+            <span class="author-block">
+              Jiyao Zhang<sup>1,2*</sup>,
+            </span>
+            <span class="author-block">
+              Tianshu Wu<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Yinghao Zhao<sup>3</sup>,
+            </span>
+            <span class="author-block">
+              Wenlong Gao<sup>3</sup>
+            </span>
+            <span class="author-block">
+              Hao Dong<sup>1,2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>CFCS, School of Computer Science, Peking University. </span><br>
+            <span class="author-block"><sup>2</sup>PKU-AgiBot Lab. </span>
+            <span class="author-block"><sup>3</sup>AgiBot. </span><br>
+            <span class="author-block"><sup>*</sup>The first two authors contributed equally. </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a target="_blank" href="omnimanip.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+
+            <!-- Arxiv Link. -->
+            <span class="link-block">
+              <a target="_blank" href="https://arxiv.org/abs/2501.03841"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>ArXiv</span>
+              </a>
+            </span>
+
+            <!-- Video Link. -->
+            <span class="link-block">
+              <a target="_blank" href="https://omnimanip.github.io"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                </span>
+                <span>Video</span>
+              </a>
+            </span>
+
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a target="_blank" href="https://github.com/pmj110119/OmniManip"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code(Coming)</span>
+                </a>
+            </span>
+
+            <!-- Simulator Benchmark Link. -->
+            <!-- <span class="link-block">
+              <a target="_blank" href="https://omnimanip.github.io"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Benchmark(Coming)</span>
+                </a>
+            </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teasor -->
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered  is-centered">
+          <video id="teaser" autoplay muted loop controls height="100%" width="100%" controlsList="nodownload">
+            <source src="media/videos/teaser.mp4"
+                    type="video/mp4">
+          </video>
+          </br>
+        </div>
+        <br>
+        <h2 class="subtitle has-text-centered">
+          Bridging high-level reasoning and precise 3D manipulation, 
+          <b>OmniManip</b> uses object-centric representations to translate VLM outputs into actionable 3D constraints. 
+          A <b>dual-loop system</b> combines VLM-guided planning with 6D pose tracking for execution, achieving <b>zero-shot generalization</b> in diverse robotic tasks without VLM fine-tuning.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tasks gallery -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/pour_tea_x3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/insert_pen_x3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/fit_lid_x3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+           <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+             <source src="media/task-videos/place_cup_x3.mp4"
+                     type="video/mp4">
+           </video>
+         </div>
+         <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/insert_flower_x3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/open_drawer_x3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/close_laptop_x3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/close_drawer_x3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/hammer_button_x3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/open_bottle_x3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/insert_flower_x3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+       <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/press_green_button_x3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<h2 class="subtitle has-text-centered">
+</br>
+  <!-- OmniManip is capable of handling diverse <b>open-vocabulary instructions and objects</b> in a <b>zero-training</b> manner. -->
+</h2>
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-bottom: 1em;">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The development of general robotic systems capable of manipulating in unstructured environments is a significant challenge. 
+            While Vision-Language Models(VLM)  excel in high-level commonsense reasoning, they lack the fine-grained 3D spatial understanding required for precise manipulation tasks. 
+            Fine-tuning VLM on robotic datasets to create Vision-Language-Action Models(VLA) is a potential solution, but it is hindered by high data collection costs and generalization issues. 
+            To address these challenges, we propose a novel object-centric representation that bridges the gap between VLM's high-level reasoning and the low-level precision required for manipulation. 
+            Our key insight is that an object's canonical space, defined by its functional affordances, provides a structured and semantically meaningful way to describe interaction primitives, such as points and directions. 
+            These primitives act as a bridge, translating VLM's commonsense reasoning into actionable 3D spatial constraints. 
+            In this context, we introduce a dual closed-loop, open-vocabulary robotic manipulation system: one loop for high-level planning through primitive resampling, interaction rendering and VLM checking, and another for low-level execution via 6D pose tracking. 
+            This design ensures robust, real-time control without requiring VLM fine-tuning. 
+            Extensive experiments demonstrate strong zero-shot generalization across diverse robotic manipulation tasks, highlighting the potential of this approach for automating large-scale simulation data generation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+
+</section>
+
+
+<!-- Method + common sense -->
+<section class="section">
+  <div class="container is-max-widescreen">
+
+    <div class="rows">
+
+
+    <!-- Animation. -->
+    <div class="rows is-centered ">
+      <div class="row is-full-width">
+        <div class="container has-text-centered">
+          <h2 class="title is-3" style="margin-bottom: 1em;"><span class="dperact" style="letter-spacing: 0.1em;">Method</span></h2>
+          <!-- <h2 class="title is-3" style="margin-bottom: 1em;"><span class="dperact" style="letter-spacing: 0.1em;">OmniManip</span></h2> -->
+        </div>
+
+        <!-- Interpolating. -->
+        <div class="content has-text-justified">
+        <!-- <br> -->
+        </div>
+        <!-- <img src="media/videos/method_figure.gif" class="interpolation-image" /> -->
+        <video src="media/videos/method.mp4" class="interpolation-image" loop autoplay muted controlsList="nodownload"></video>
+        <p class="content has-text-justified">
+          Given instructions and RGB-D observations, OmniManip utilizes VLM and VFM to identify task-relevant objects and decompose the task into distinct stages. 
+          During each stage, OmniManip extracts <span style="color: orange;">object-centric canonical interaction primitives</span> as spatial constraints and employs the <span style="color: orange;">RRC</span> mechanism for <span style="color: orange;">closed-loop inference</span>.
+          For execution, the trajectory is optimized by constraints and updated via a 6D pose tracker, achieving <span style="color: orange;">closed-loop execution</span>.
+        </p>
+        <img src="media/figure/method.png" class="interpolation-image"/>
+        
+        <!--
+        <div class="container has-text-centered">
+          <h3 class="title is-4" style="margin-bottom: 1em;"><span class="dperact" style="letter-spacing: 0.1em; color: limegreen;">closed-loop Planning</span></h2>
+        </div>
+        <img src="media/figure/closed-loop_planning.png" class="interpolation-image" style="max-width: 60%; display: block; margin: 0 auto;"/>
+        <p class="content has-text-justified">
+          This module is utilized to identify the <span style="color: orange;">grasping part for task-oriented grasping</span> or <span style="color: deepskyblue;"> task-relevant
+          parts for task-aware motion planning</span>. The grounding process is divided into two stages: coarse-grained object grounding
+          and fine-grained part grounding. Specifically, we first segment and label objects within the scene using SoM. Then, in
+          conjunction with the instruction, we employ GPT-4V to select the <span style="color: orange;">grasping</span>/<span style="color: deepskyblue;">task-relevant</span> objects. Finally, similar fine-grained
+          part grounding is applied to locate the specific <span style="color: orange;">grasping</span>/<span style="color: deepskyblue;">task-relevant</span> parts.
+        </p>
+        <div class="container has-text-centered">
+          <h3 class="title is-4" style="margin-bottom: 1em;"><span class="dperact" style="letter-spacing: 0.1em; color: limegreen;">closed-loop Execution</span></h2>
+        </div>
+        <img src="media/figure/closed-loop_execution.png" class="interpolation-image" style="max-width: 60%; display: block; margin: 0 auto;"/>
+        <p class="content has-text-justified">
+          This module is utilized to identify the <span style="color: orange;">grasping part for task-oriented grasping</span> or <span style="color: deepskyblue;"> task-relevant
+          parts for task-aware motion planning</span>. The grounding process is divided into two stages: coarse-grained object grounding
+          and fine-grained part grounding. Specifically, we first segment and label objects within the scene using SoM. Then, in
+          conjunction with the instruction, we employ GPT-4V to select the <span style="color: orange;">grasping</span>/<span style="color: deepskyblue;">task-relevant</span> objects. Finally, similar fine-grained
+          part grounding is applied to locate the specific <span style="color: orange;">grasping</span>/<span style="color: deepskyblue;">task-relevant</span> parts.
+        </p>
+
+        </br>
+        </br>
+        -->
+        
+        <!--/ Re-rendering. -->
+        <!-- Interactive Visualization -->
+        <!--
+        <div class="container has-text-centered">
+          <h2 class="title is-3" style="margin-bottom: 1em;">Visualization of Spatial Constraints</h2>
+        </div>
+        <div class="columns is-vcentered">
+          <div class="column has-text-centered">
+
+            Visualization for   
+            <div class="select is-small is-rounded">     
+              <select id="interactive-menu" onchange="updateInteractive()">
+              <option value="flowers" selected="selected">"Put flowers into vase"</option>
+              <option value="hammer">"Hammer the nail"</option>
+              <option value="drawer">"Open the drawer"</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="columns is-vcentered">
+          <div class="column is-two-fifths">
+            <video id="interactive-video" width="100%" height="100%" controls autoplay loop muted>
+              <source src="media/short-videos/pour_tea_x3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column has-text-centered">
+            <iframe id="interactive-html-1" src="media/interactive/flowers.html" width="100%" height="600" frameborder="0"></iframe>
+            <p style="text-align:center;">
+              Visualization of spatial constraints & post-grasp end-effector trajectory
+            </p>
+          </div>
+        </div>
+        -->
+        
+
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Long-horizon Task -->
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="container has-text-centered">
+        <h2 class="title is-3" style="margin-bottom: 1em;">Application to Long-horizon Task</h2>
+      </div>
+      <p class="content has-text-justified">
+        With the integration of a VLM-based high-level planner, OmniManip can accomplish long-horizon tasks. The high-level planner is responsible for task decomposition, 
+        while OmniManip executes each subtask. Below are two examples of long-horizon tasks.
+      </p >
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-content">
+              <b>User</b>: "Hi robot, cook rice for me." <br><br>
+              <b>Subtasks</b>: <ol>
+                <li>“Open the lid”</li>
+                <li>“Pour the rice”</li>
+                <li>“Add the water”</li>
+                <li>“Close the lid” </li>
+                <li>“Click start button (top left corner)” </li>
+                <li>“Wait 20 minutes”</li>
+                <li>“Open the lid”</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <video width="100%" height="100%" controls controlsList="nodownload">
+            <source src="media/long-horizon/cook_rice.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-content">
+              <b>User</b>: "The table is too messy, organize it." <br><br>
+              <b>Subtasks</b>: <ol>
+                <li>“Insert pen into holder”</li>
+                <li>“Throw paper ball into bin”</li>
+                <li>“Open drawer”</li>
+                <li>“Place toy into drawer”</li>
+                <li>“Close drawer” </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <video width="100%" height="100%" controls controlsList="nodownload">
+            <source src="media/long-horizon/clean_up_table.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cross-embodied -->
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="container has-text-centered">
+        <h2 class="title is-3" style="margin-bottom: 1em;">Cross-embodiment Capabilities (TODO)</h2>
+      </div>
+      <p class="content has-text-justified">
+        OmniManip is a hardware-agnostic approach that can be easily deployed on various types of robotic embodiments. 
+        It utilizes the common-sense understanding capabilities of Vision-Language Models (VLM) to achieve open-vocabulary manipulation. We have implemented this operational framework on AgiBot's dual-arm humanoid robot.
+      </p >
+      <div class="columns is-centered is-vcentered">
+        <div class="column">
+          <video width="100%" height="100%" controls controlsList="nodownload">
+            <source src="media/long-horizon/a2w.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Simulation-embodied -->
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="container has-text-centered">
+        <h2 class="title is-3" style="margin-bottom: 1em;">Simulation Benchmark (TODO)</h2>
+      </div>
+      <p class="content has-text-justified">
+        TODO
+      </p >
+      <div class="columns is-centered is-vcentered">
+        <div class="column">
+          <video width="100%" height="100%" controls controlsList="nodownload">
+            <source src="media/long-horizon/a2w.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
