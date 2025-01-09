@@ -178,7 +178,7 @@
         <h2 class="subtitle has-text-centered">
           Bridging high-level reasoning and precise 3D manipulation, 
           <b>OmniManip</b> uses object-centric representations to translate VLM outputs into actionable 3D constraints. 
-          A <b>dual-loop system</b> combines VLM-guided planning with 6D pose tracking for execution, achieving <b>zero-shot generalization</b> in diverse robotic tasks without VLM fine-tuning.
+          A <span style="color: black;"><b>dual-loop system</b></span> combines VLM-guided planning with 6D pose tracking for execution, achieving generalization in diverse robotic tasks with a <span style="color: green;"><b>zero-training</b></span> manenr.
         </h2>
       </div>
     </div>
@@ -319,83 +319,75 @@
         <!-- <br> -->
         </div>
         <!-- <img src="media/videos/method_figure.gif" class="interpolation-image" /> -->
-        <video src="media/videos/method.mp4" class="interpolation-image" loop autoplay muted controls controlsList="nodownload"></video>
+        <div class="columns is-vcentered  is-centered">
+          <video src="media/videos/method.mp4" class="interpolation-image" loop autoplay muted controls controlsList="nodownload" width="90%"></video>
+        </div>
         <p class="content has-text-justified">
           Given instructions and RGB-D observations, OmniManip utilizes VLM and VFM to identify task-relevant objects and decompose the task into distinct stages. 
           During each stage, OmniManip extracts <span style="color: orange;">object-centric canonical interaction primitives</span> as spatial constraints and employs the <span style="color: orange;">RRC</span> mechanism for <span style="color: orange;">closed-loop planning</span>.
           For execution, the trajectory is optimized by constraints and updated via a 6D pose tracker, achieving <span style="color: orange;">closed-loop execution</span>.
         </p>
-        <img src="media/figure/method.png" class="interpolation-image"/>
-        
-        <!--
-        <div class="container has-text-centered">
-          <h3 class="title is-4" style="margin-bottom: 1em;"><span class="dperact" style="letter-spacing: 0.1em; color: limegreen;">closed-loop Planning</span></h2>
+        <div class="columns is-vcentered  is-centered">
+          <img src="media/figure/method.png"  class="interpolation-image" width="90%"/>
         </div>
-        <img src="media/figure/closed-loop_planning.png" class="interpolation-image" style="max-width: 60%; display: block; margin: 0 auto;"/>
-        <p class="content has-text-justified">
-          This module is utilized to identify the <span style="color: orange;">grasping part for task-oriented grasping</span> or <span style="color: deepskyblue;"> task-relevant
-          parts for task-aware motion planning</span>. The grounding process is divided into two stages: coarse-grained object grounding
-          and fine-grained part grounding. Specifically, we first segment and label objects within the scene using SoM. Then, in
-          conjunction with the instruction, we employ GPT-4V to select the <span style="color: orange;">grasping</span>/<span style="color: deepskyblue;">task-relevant</span> objects. Finally, similar fine-grained
-          part grounding is applied to locate the specific <span style="color: orange;">grasping</span>/<span style="color: deepskyblue;">task-relevant</span> parts.
-        </p>
-        <div class="container has-text-centered">
-          <h3 class="title is-4" style="margin-bottom: 1em;"><span class="dperact" style="letter-spacing: 0.1em; color: limegreen;">closed-loop Execution</span></h2>
-        </div>
-        <img src="media/figure/closed-loop_execution.png" class="interpolation-image" style="max-width: 60%; display: block; margin: 0 auto;"/>
-        <p class="content has-text-justified">
-          This module is utilized to identify the <span style="color: orange;">grasping part for task-oriented grasping</span> or <span style="color: deepskyblue;"> task-relevant
-          parts for task-aware motion planning</span>. The grounding process is divided into two stages: coarse-grained object grounding
-          and fine-grained part grounding. Specifically, we first segment and label objects within the scene using SoM. Then, in
-          conjunction with the instruction, we employ GPT-4V to select the <span style="color: orange;">grasping</span>/<span style="color: deepskyblue;">task-relevant</span> objects. Finally, similar fine-grained
-          part grounding is applied to locate the specific <span style="color: orange;">grasping</span>/<span style="color: deepskyblue;">task-relevant</span> parts.
-        </p>
-
-        </br>
-        </br>
-        -->
-        
-        <!--/ Re-rendering. -->
-        <!-- Interactive Visualization -->
-        <!--
-        <div class="container has-text-centered">
-          <h2 class="title is-3" style="margin-bottom: 1em;">Visualization of Spatial Constraints</h2>
-        </div>
-        <div class="columns is-vcentered">
-          <div class="column has-text-centered">
-
-            Visualization for   
-            <div class="select is-small is-rounded">     
-              <select id="interactive-menu" onchange="updateInteractive()">
-              <option value="flowers" selected="selected">"Put flowers into vase"</option>
-              <option value="hammer">"Hammer the nail"</option>
-              <option value="drawer">"Open the drawer"</option>
-              </select>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="columns is-vcentered">
-          <div class="column is-two-fifths">
-            <video id="interactive-video" width="100%" height="100%" controls autoplay loop muted>
-              <source src="media/short-videos/pour_tea_x3.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="column has-text-centered">
-            <iframe id="interactive-html-1" src="media/interactive/flowers.html" width="100%" height="600" frameborder="0"></iframe>
-            <p style="text-align:center;">
-              Visualization of spatial constraints & post-grasp end-effector trajectory
-            </p>
-          </div>
-        </div>
-        -->
-        
-
         </div>
     </div>
   </div>
 </section>
+
+
+
+<!-- Video and Image Section -->
+<section class="section">
+  <div class="container has-text-centered">
+    <h2 class="title is-3" style="margin-bottom: 1em;">Dual Closed-loop System Design</h2>
+  </div>
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="columns is-centered is-vcentered">
+        <div class="column" style="flex: 1;">
+          <img src="media/figure/closed_loop_planning.png" alt="Image 2" width="100%">
+        </div>
+        <div class="column">
+          <video autoplay muted loop width="100%">
+            <source src="media/videos/close_loop_planning_x1.mp4" type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+      <p class="has-text-centered"><span style="color: black"><b>Closed-loop Planning.</b></span></b> 
+        <!-- Thanks to object-centric representation design, OmniManip can achieve closed-loop execution with a 6D-pose tracker. -->
+      </p>
+    </div>
+  </div>
+  <br>
+  <br>
+<!-- </section> -->
+
+<!-- Video and Image Section -->
+<!-- <section class="section"> -->
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <!-- <div class="container has-text-centered">
+        <h2 class="title is-3" style="margin-bottom: 1em;">Closed-loop Planning</h2>
+      </div> -->
+      <div class="columns is-centered is-vcentered">
+        <div class="column" style="flex: 1;">
+          <img src="media/figure/closed_loop_execution.png" alt="Image 2" width="150%">
+        </div>
+        <div class="column">
+          <video autoplay muted loop width="100%">
+            <source src="media/videos/close_loop_exeution_x1.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <p class="has-text-centered"><span style="color: black"><b>Closed-loop Execution.</b></span></b> 
+        <!-- Thanks to object-centric representation design, OmniManip can achieve closed-loop execution with a 6D-pose tracker. -->
+      </p>
+    </div>
+  </div>
+</section>
+
 
 
 <!-- Long-horizon Task -->
